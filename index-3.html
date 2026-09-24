@@ -84,4 +84,366 @@ a { color: var(--honey-deep); }
   color: var(--ink); text-decoration: none;
 }
 .logo svg { color: var(--honey-deep); }
-.
+.nav__links { display: flex; align-items: center; gap: 28px; }
+.nav__links a:not(.btn) { color: var(--ink); text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav__links a:not(.btn):hover { color: var(--honey-deep); }
+.nav__toggle { position: absolute; opacity: 0; pointer-events: none; }
+.nav__burger { display: none; width: 44px; height: 44px; cursor: pointer; flex-direction: column; justify-content: center; gap: 6px; padding: 10px; }
+.nav__burger span { display: block; height: 2px; background: var(--ink); border-radius: 2px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; padding: clamp(72px, 12vw, 150px) 0 clamp(64px, 10vw, 120px); }
+.hero__inner { position: relative; z-index: 1; max-width: 860px; margin-left: max(16px, (100% - 1160px) / 2); }
+.hero h1 em { font-style: italic; color: var(--honey-deep); font-weight: 400; }
+.hero__lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 600px; margin: 1.2em 0 2em; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__tag { margin-top: 2.5rem; font-size: .9rem; color: var(--ink-soft); }
+
+/* Sections */
+.section { padding: clamp(64px, 9vw, 112px) 0; }
+.section--dark { background: var(--ink); color: var(--cream); }
+.section--dark .eyebrow { color: var(--honey); }
+.section--honey { background: var(--honey); }
+.section--honey .eyebrow { color: var(--brown); }
+.section--cream { background: var(--cream-2); }
+
+.split { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+.split p { color: var(--ink-soft); }
+
+.grid { display: grid; gap: 24px; }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.num { font-family: var(--display); font-weight: 600; font-size: 1rem; color: var(--honey-deep); }
+
+/* Stats */
+.stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.stats li { padding: 22px 26px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); display: flex; align-items: baseline; gap: 18px; }
+.stats strong { font-family: var(--display); font-size: 2.8rem; line-height: 1; color: var(--honey-deep); min-width: 3.2ch; }
+.stats span { color: var(--ink-soft); }
+
+/* Misión / visión */
+.mv { padding: 36px; border: 1px solid rgba(251, 246, 236, .2); border-radius: var(--radius); }
+.mv h3 { color: var(--honey); font-size: .85rem; font-family: var(--body); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; }
+.mv p { font-family: var(--display); font-size: 1.35rem; line-height: 1.45; margin: 0; }
+
+/* Valores */
+.values { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.values li { padding: 24px 20px 8px 0; border-right: 1px solid var(--line); padding-left: 20px; }
+.values li:first-child { padding-left: 0; }
+.values li:last-child { border-right: 0; }
+.values h3 { margin-top: .8rem; }
+.values p { font-size: .95rem; color: var(--ink-soft); }
+
+/* Regiones */
+.region { position: relative; background: var(--cream); border-radius: var(--radius); padding: 36px 30px 30px; }
+.region h3 { font-size: 2rem; }
+.region p { color: var(--ink-soft); margin: 0; }
+.region--new { background: var(--ink); color: var(--cream); }
+.region--new p { color: #e8dcc6; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; background: var(--honey); color: var(--ink); padding: 5px 10px; border-radius: 999px; margin-bottom: 14px; }
+
+/* Ciclo */
+.cycle { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: c; }
+.cycle li { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
+.cycle li:not(:last-child)::after {
+  content: "→"; position: absolute; right: -17px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; border-radius: 50%; background: var(--honey); color: var(--ink);
+  display: grid; place-items: center; font-size: .9rem; z-index: 1;
+}
+.cycle h3 { margin-top: .6rem; }
+.cycle p { font-size: .95rem; color: var(--ink-soft); margin: 0; }
+.cycle__note { margin-top: 32px; text-align: center; font-family: var(--display); font-style: italic; font-size: 1.25rem; color: var(--honey-deep); }
+
+/* Fondo */
+.fund { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.fund li { padding: 22px 24px; background: var(--cream); border-radius: var(--radius); border: 1px solid var(--line); }
+.fund h3 { font-size: 1.15rem; margin-bottom: .3em; }
+.fund p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+
+/* Razones */
+.reasons article { display: flex; gap: 18px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.reasons .num { font-size: 1.8rem; line-height: 1; }
+.reasons p { margin: 0; color: var(--ink-soft); }
+
+/* Contacto */
+.contact { background: var(--ink); color: var(--cream); padding: clamp(72px, 10vw, 128px) 0; text-align: center; }
+.contact h2 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: .2em; }
+.contact__lead { font-size: 1.25rem; color: #e8dcc6; margin-bottom: 2.4rem; }
+.contact__card { display: inline-block; padding: 36px 40px; border: 1px solid rgba(251, 246, 236, .2); border-radius: var(--radius); }
+.contact__name { font-family: var(--display); font-size: 1.6rem; margin: 0; }
+.contact__role { color: var(--honey); margin-bottom: .8rem; }
+.contact__phone { display: block; font-family: var(--display); font-size: 2rem; color: var(--cream); text-decoration: none; margin-bottom: 1.4rem; }
+.contact__phone:hover { color: var(--honey); }
+.contact .hero__cta { justify-content: center; }
+.contact .btn:not(.btn--ghost-light) { background: var(--honey); border-color: var(--honey); color: var(--ink); }
+.contact .btn:not(.btn--ghost-light):hover { background: #f0b44a; }
+
+.footer { background: #1d150d; color: #b8a88f; font-size: .9rem; padding: 24px 0; }
+.footer__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: center; }
+.logo--light { color: var(--cream); font-size: 1.1rem; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .values { grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; gap: 16px; }
+  .values li, .values li:first-child { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: #fff; }
+  .cycle { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cycle li::after { display: none; }
+}
+@media (max-width: 760px) {
+  .nav__burger { display: flex; }
+  .nav__links {
+    position: absolute; top: 68px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--cream); border-bottom: 1px solid var(--line);
+    padding: 8px 16px 20px; display: none;
+  }
+  .nav__links a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .nav__links .btn { margin-top: 14px; }
+  .nav__toggle:checked ~ .nav__links { display: flex; }
+  .split, .grid--2, .grid--3, .cycle, .values { grid-template-columns: 1fr; }
+  .mv { padding: 26px; }
+  .contact__card { display: block; padding: 28px 20px; }
+}
+
+/* ===== Fotos de fondo ===== */
+.photo { position: relative; background-color: var(--ink); background-size: cover; background-position: center; isolation: isolate; }
+.photo::before { content: ""; position: absolute; inset: 0; z-index: -1; }
+.hero.photo { color: var(--cream); background-image: url("https://images.unsplash.com/photo-1623018697148-8350cf18e64e?auto=format&fit=crop&w=1920&q=75"); }
+.hero.photo::before { background: linear-gradient(90deg, rgba(30,20,10,.92) 0%, rgba(30,20,10,.72) 50%, rgba(30,20,10,.35) 100%); }
+.hero.photo .eyebrow { color: var(--honey); }
+.hero.photo h1 em { color: var(--honey); }
+.hero.photo .hero__lead, .hero.photo .hero__tag { color: #eadfca; }
+.hero.photo .btn { background: var(--honey); border-color: var(--honey); color: var(--ink); }
+.hero.photo .btn:hover { background: #f0b44a; }
+.hero.photo .btn--ghost { background: transparent; color: var(--cream); border-color: var(--cream); }
+.hero.photo .btn--ghost:hover { background: var(--cream); color: var(--ink); }
+
+.section--dark.photo { background-image: url("https://images.unsplash.com/photo-1573500758697-c9cf976308d8?auto=format&fit=crop&w=1920&q=70"); background-attachment: fixed; }
+.section--dark.photo::before { background: rgba(28,19,10,.86); }
+.section--dark.photo .mv { background: rgba(28,19,10,.45); backdrop-filter: blur(4px); }
+
+.section--honey.photo { background-color: var(--honey); background-image: url("https://images.unsplash.com/photo-1577095870693-360d002ad341?auto=format&fit=crop&w=1920&q=70"); }
+.section--honey.photo::before { background: rgba(224,164,58,.9); }
+
+.contact.photo { background-image: url("https://images.unsplash.com/photo-1586106901017-b2d588f9c458?auto=format&fit=crop&w=1920&q=70"); }
+.contact.photo::before { background: rgba(28,19,10,.84); }
+
+.strip { height: clamp(180px, 28vw, 320px); background: var(--honey) url("https://images.unsplash.com/photo-1627515761181-9d20a39536bb?auto=format&fit=crop&w=1920&q=70") center/cover; }
+
+/* Abejas animadas */
+.bee { position: absolute; width: 46px; height: 46px; z-index: 0; pointer-events: none; animation: fly 9s ease-in-out infinite; }
+.bee--1 { top: 18%; right: 14%; }
+.bee--2 { top: 62%; right: 30%; width: 34px; height: 34px; animation-duration: 12s; animation-delay: -4s; }
+.bee--3 { top: 34%; right: 6%; width: 28px; height: 28px; animation-duration: 10s; animation-delay: -7s; }
+.bee .wing { transform-origin: 24px 18px; animation: flap .12s linear infinite alternate; }
+@keyframes fly { 0%,100% { transform: translate(0,0) rotate(-8deg); } 25% { transform: translate(-40px,-24px) rotate(6deg); } 50% { transform: translate(-10px,-50px) rotate(-4deg); } 75% { transform: translate(30px,-18px) rotate(10deg); } }
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
+@media (prefers-reduced-motion: reduce) { .bee, .bee .wing { animation: none; } }
+@media (max-width: 760px) { .section--dark.photo { background-attachment: scroll; } .bee--2 { display: none; } }
+
+/* Logo de panal */
+.hero__logo{position:absolute;z-index:0;right:max(24px,(100% - 1160px)/2);top:50%;transform:translateY(-50%);width:clamp(260px,30vw,400px);height:auto;pointer-events:none}
+.hx{fill:none;stroke:rgba(224,164,58,.45);stroke-width:2}
+.hx--dark{fill:rgba(80,60,40,.85);stroke:none}
+.hx--gold{fill:#e0a43a;stroke:none;animation:glow 4s ease-in-out infinite}
+@keyframes glow{0%,100%{fill:#e0a43a}50%{fill:#f0b44a}}
+.bee{z-index:2}
+.bee--1{top:14%;right:calc(max(24px,(100% - 1160px)/2) + 300px)}
+.bee--2{top:70%;right:calc(max(24px,(100% - 1160px)/2) + 60px)}
+.bee--3{top:30%;right:max(12px,(100% - 1160px)/2 - 20px)}
+@media (max-width:1000px){.hero__logo{top:24px;transform:none;right:-40px;width:220px;opacity:.35}.bee--1{right:180px;top:8%}}
+@media (prefers-reduced-motion:reduce){.hx--gold{animation:none}}
+@media (min-width:1001px){.hero__inner{max-width:min(640px,100% - 440px)}}
+@media (max-width:1000px){.bee{z-index:0}.bee--1{right:40px;top:4%}.bee--3{top:22%}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="#inicio" class="logo" aria-label="Co-Néctar, inicio">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 10 21 13v6l-5 3-5-3v-6z" fill="currentColor"/></svg>
+      Co-Néctar
+    </a>
+    <input type="checkbox" id="menu-toggle" class="nav__toggle">
+    <label for="menu-toggle" class="nav__burger" aria-label="Abrir menú"><span></span><span></span><span></span></label>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#valores">Valores</a>
+      <a href="#apicultores">Apicultores</a>
+      <a href="#modelo">Modelo</a>
+      <a href="#restaurantes">Restaurantes</a>
+      <a href="#contacto" class="btn btn--small">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero photo" id="inicio">
+    <svg class="bee bee--1" viewBox="0 0 48 48" aria-hidden="true"><g class="wing" fill="rgba(255,255,255,.75)" stroke="#2a1f14" stroke-width="1.2"><ellipse cx="20" cy="12" rx="7" ry="10" transform="rotate(-20 20 12)"/><ellipse cx="29" cy="12" rx="6" ry="9" transform="rotate(20 29 12)"/></g><ellipse cx="24" cy="28" rx="13" ry="10" fill="#e0a43a" stroke="#2a1f14" stroke-width="1.5"/><path d="M19 19v18M25 18v20M31 20v16" stroke="#2a1f14" stroke-width="3"/><circle cx="37" cy="26" r="5" fill="#2a1f14"/><path d="M11 28H6" stroke="#2a1f14" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="bee bee--2" viewBox="0 0 48 48" aria-hidden="true"><g class="wing" fill="rgba(255,255,255,.75)" stroke="#2a1f14" stroke-width="1.2"><ellipse cx="20" cy="12" rx="7" ry="10" transform="rotate(-20 20 12)"/><ellipse cx="29" cy="12" rx="6" ry="9" transform="rotate(20 29 12)"/></g><ellipse cx="24" cy="28" rx="13" ry="10" fill="#e0a43a" stroke="#2a1f14" stroke-width="1.5"/><path d="M19 19v18M25 18v20M31 20v16" stroke="#2a1f14" stroke-width="3"/><circle cx="37" cy="26" r="5" fill="#2a1f14"/><path d="M11 28H6" stroke="#2a1f14" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="bee bee--3" viewBox="0 0 48 48" aria-hidden="true"><g class="wing" fill="rgba(255,255,255,.75)" stroke="#2a1f14" stroke-width="1.2"><ellipse cx="20" cy="12" rx="7" ry="10" transform="rotate(-20 20 12)"/><ellipse cx="29" cy="12" rx="6" ry="9" transform="rotate(20 29 12)"/></g><ellipse cx="24" cy="28" rx="13" ry="10" fill="#e0a43a" stroke="#2a1f14" stroke-width="1.5"/><path d="M19 19v18M25 18v20M31 20v16" stroke="#2a1f14" stroke-width="3"/><circle cx="37" cy="26" r="5" fill="#2a1f14"/><path d="M11 28H6" stroke="#2a1f14" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg class="hero__logo" viewBox="0 0 311 333" role="img" aria-label="Logo de Co-Néctar: panal de hexágonos"><polygon class="hx hx--dark" points="90.6,4.0 133.9,29.0 133.9,79.0 90.6,104.0 47.3,79.0 47.3,29.0"/><polygon class="hx" points="177.2,4.0 220.5,29.0 220.5,79.0 177.2,104.0 133.9,79.0 133.9,29.0"/><polygon class="hx" points="263.8,4.0 307.1,29.0 307.1,79.0 263.8,104.0 220.5,79.0 220.5,29.0"/><polygon class="hx" points="47.3,79.0 90.6,104.0 90.6,154.0 47.3,179.0 4.0,154.0 4.0,104.0"/><polygon class="hx hx--gold" points="133.9,79.0 177.2,104.0 177.2,154.0 133.9,179.0 90.6,154.0 90.6,104.0"/><polygon class="hx" points="220.5,79.0 263.8,104.0 263.8,154.0 220.5,179.0 177.2,154.0 177.2,104.0"/><polygon class="hx" points="90.6,154.0 133.9,179.0 133.9,229.0 90.6,254.0 47.3,229.0 47.3,179.0"/><polygon class="hx hx--dark" points="177.2,154.0 220.5,179.0 220.5,229.0 177.2,254.0 133.9,229.0 133.9,179.0"/><polygon class="hx" points="220.5,229.0 263.8,254.0 263.8,304.0 220.5,329.0 177.2,304.0 177.2,254.0"/></svg>
+    <div class="wrap hero__inner">
+      <p class="eyebrow">Propuesta para restauranteros · CDMX</p>
+      <h1>Miel artesanal mexicana, <em>del apiario a tu cocina.</em></h1>
+      <p class="hero__lead">Empresa social que lleva miel premium de apicultores de Puebla, Oaxaca y Veracruz a las cocinas que valoran el origen de cada ingrediente.</p>
+      <div class="hero__cta">
+        <a href="#contacto" class="btn">Hagamos equipo</a>
+        <a href="#nosotros" class="btn btn--ghost">Conócenos</a>
+      </div>
+      <p class="hero__tag">Empresa social · Puebla · Oaxaca · Veracruz</p>
+    </div>
+  </section>
+
+  <!-- 01 QUIÉNES SOMOS -->
+  <section class="section" id="nosotros">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">01 · Quiénes somos</p>
+        <h2>Somos el puente entre el apiario y tu mesa.</h2>
+        <p>Co-Néctar es una empresa social que lleva miel mexicana premium, producida por apicultores de Puebla, Oaxaca y Veracruz, a cocinas y mercados que valoran el origen, la calidad y la historia detrás de cada ingrediente.</p>
+        <p>Trabajamos directo con los productores: sin intermediarios que diluyan su trabajo ni la calidad de su miel. Cada frasco conserva su carácter artesanal y orgánico, y cada venta ayuda a fortalecer a las familias apicultoras.</p>
+      </div>
+      <ul class="stats">
+        <li><strong>3</strong><span>estados productores</span></li>
+        <li><strong>100%</strong><span>trato directo con apicultores</span></li>
+        <li><strong>1</strong><span>fondo crediticio para productores</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 MISIÓN Y VISIÓN -->
+  <div class="strip" role="img" aria-label="Abeja sobre panal de miel"></div>
+
+  <section class="section section--dark photo">
+    <div class="wrap">
+      <p class="eyebrow">02 · Misión y visión</p>
+      <h2>Hacia dónde vamos</h2>
+      <div class="grid grid--2">
+        <article class="mv">
+          <h3>Misión</h3>
+          <p>Posicionar la miel artesanal mexicana en los mejores mercados y cocinas, generando un ingreso justo para los apicultores y reinvirtiendo en ellos para que crezcan sin perder la esencia de su oficio.</p>
+        </article>
+        <article class="mv">
+          <h3>Visión</h3>
+          <p>Ser la marca de referencia de miel artesanal mexicana, reconocida por su calidad, su trazabilidad y por demostrar que un negocio rentable también puede transformar a las comunidades que lo hacen posible.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 VALORES -->
+  <section class="section" id="valores">
+    <div class="wrap">
+      <p class="eyebrow">03 · Valores</p>
+      <h2>Lo que nos mueve</h2>
+      <ol class="values">
+        <li><span class="num">01</span><h3>Origen</h3><p>Cada miel tiene nombre, región y productor. Sabemos de dónde viene cada frasco.</p></li>
+        <li><span class="num">02</span><h3>Calidad</h3><p>Miel pura, cruda y seleccionada. Sin mezclas ni atajos.</p></li>
+        <li><span class="num">03</span><h3>Comercio justo</h3><p>Los apicultores reciben un trato digno y una parte de lo que su miel genera.</p></li>
+        <li><span class="num">04</span><h3>Oficio artesanal</h3><p>Respetamos los procesos tradicionales y el carácter orgánico de la miel.</p></li>
+        <li><span class="num">05</span><h3>Comunidad</h3><p>Crecemos junto con las familias apicultoras, no a costa de ellas.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 04 APICULTORES -->
+  <section class="section section--honey photo" id="apicultores">
+    <div class="wrap">
+      <p class="eyebrow">04 · Nuestros apicultores</p>
+      <h2>Tres regiones, un mismo estándar</h2>
+      <div class="grid grid--3">
+        <article class="region">
+          <h3>Puebla</h3>
+          <p>Apicultores con quienes trabajamos directo desde el inicio de Co-Néctar.</p>
+        </article>
+        <article class="region region--new">
+          <span class="badge">Nuevo socio estratégico</span>
+          <h3>Oaxaca</h3>
+          <p>Nueva región de la mano de un socio estratégico que se sumó al proyecto y amplía nuestra red de productores.</p>
+        </article>
+        <article class="region">
+          <h3>Veracruz</h3>
+          <p>Productores de una región de gran diversidad floral, clave en nuestra oferta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 MODELO DE NEGOCIO -->
+  <section class="section" id="modelo">
+    <div class="wrap">
+      <p class="eyebrow">05 · Modelo de negocio</p>
+      <h2>Un ciclo que se regenera</h2>
+      <ol class="cycle">
+        <li><span class="num">01</span><h3>Apicultores</h3><p>Producen miel artesanal y orgánica y nos la entregan.</p></li>
+        <li><span class="num">02</span><h3>Co-Néctar</h3><p>Seleccionamos, cuidamos la calidad y la posicionamos en el mercado.</p></li>
+        <li><span class="num">03</span><h3>Mercado</h3><p>Restaurantes y clientes que valoran un producto con origen.</p></li>
+        <li><span class="num">04</span><h3>Fondo crediticio</h3><p>Un porcentaje de las utilidades regresa a los apicultores como crédito.</p></li>
+      </ol>
+      <p class="cycle__note">El crédito regresa al origen: mejor equipo, mejores procesos, misma esencia.</p>
+    </div>
+  </section>
+
+  <!-- 06 FONDO CREDITICIO -->
+  <section class="section section--cream">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">06 · Fondo crediticio</p>
+        <h2>Crecer sin perder lo artesanal.</h2>
+        <p>Una parte de las utilidades de cada venta alimenta un fondo al que los apicultores pueden acceder para invertir en su producción. Cada compra de tu restaurante se convierte en una herramienta de crecimiento para quien produce la miel.</p>
+      </div>
+      <ul class="fund">
+        <li><h3>Mejor equipo</h3><p>Colmenas, extractores y material apícola de mejor calidad.</p></li>
+        <li><h3>Mejores procesos</h3><p>Cosecha, filtrado y envasado más eficientes e higiénicos.</p></li>
+        <li><h3>Misma esencia</h3><p>Mejorar sin industrializar: la calidad, el toque artesanal y lo orgánico se mantienen.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 07 PARA TU RESTAURANTE -->
+  <section class="section" id="restaurantes">
+    <div class="wrap">
+      <p class="eyebrow">07 · Para tu restaurante</p>
+      <h2>Por qué Co-Néctar en tu cocina</h2>
+      <div class="grid grid--2 reasons">
+        <article><span class="num">01</span><div><h3>Ingrediente con historia</h3><p>Una miel con origen y productor que tu equipo puede contar en carta y en mesa.</p></div></article>
+        <article><span class="num">02</span><div><h3>Calidad constante</h3><p>Selección directa en apiario y control en cada lote.</p></div></article>
+        <article><span class="num">03</span><div><h3>Perfiles distintos</h3><p>Mieles monoflorales y multiflorales para postres, coctelería, aderezos y maridajes.</p></div></article>
+        <article><span class="num">04</span><div><h3>Impacto real</h3><p>Tu compra fortalece a familias apicultoras de Puebla, Oaxaca y Veracruz.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact photo" id="contacto">
+    <div class="wrap contact__inner">
+      <h2>Hagamos equipo.</h2>
+      <p class="contact__lead">Llevemos la mejor miel de México a tu mesa.</p>
+      <div class="contact__card">
+        <p class="contact__name">Roberto</p>
+        <p class="contact__role">Fundador, Co-Néctar</p>
+        <a class="contact__phone" href="tel:+527296100886">729 610 0886</a>
+        <div class="hero__cta">
+          <a href="https://wa.me/527296100886?text=Hola%20Roberto%2C%20me%20interesa%20la%20miel%20de%20Co-N%C3%A9ctar%20para%20mi%20restaurante." class="btn" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a href="tel:+527296100886" class="btn btn--ghost-light">Llamar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="logo logo--light">Co-Néctar</span>
+    <span>Miel artesanal mexicana · Puebla · Oaxaca · Veracruz</span>
+  </div>
+</footer>
+
+</body>
+</html>
