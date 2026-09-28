@@ -256,6 +256,12 @@ a { color: var(--honey-deep); }
 @media (prefers-reduced-motion:reduce){.hx--gold{animation:none}}
 @media (min-width:1001px){.hero__inner{max-width:min(640px,100% - 440px)}}
 @media (max-width:1000px){.bee{z-index:0}.bee--1{right:40px;top:4%}.bee--3{top:22%}}
+
+/* Textos justificados */
+main p:not(.eyebrow):not(.hero__tag):not(.cycle__note):not(.contact__lead):not(.contact__name):not(.contact__role) {
+  text-align: justify;
+  hyphens: auto;
+}
 </style>
 </head>
 <body>
